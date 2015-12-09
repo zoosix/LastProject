@@ -1,4 +1,4 @@
-癤?(document).bind('contextmenu', function(ex){
+$(document).bind('contextmenu', function(ex){
 	ex.preventDefault();
 });
 $(document).ready(function(){

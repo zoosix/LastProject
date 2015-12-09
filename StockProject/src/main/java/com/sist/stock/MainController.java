@@ -35,7 +35,7 @@ public class MainController {
 	   model.addAttribute("ex",vo);
 	   try {
        	RSSReader reader = RSSReader.getInstance();
-		reader.setURL(new URL("http://newssearch.naver.com/search.naver?where=rss&query=�궪�꽦�쟾�옄"));		int r=(int)(Math.random()*255);
+		reader.setURL(new URL("http://newssearch.naver.com/search.naver?where=rss&query=삼성전자"));		int r=(int)(Math.random()*255);
 			int g=(int)(Math.random()*255);
 			int b=(int)(Math.random()*255);
 			model.addAttribute("r", r);
