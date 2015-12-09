@@ -119,8 +119,8 @@
 				<ul
 					class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
 					for="accbtn">
-					<li class="mdl-menu__item" id="signin"><a href="logout.do">LOGOUT</a></li>
-					<li class="mdl-menu__item" aling=center><a href="mypage.do">MYPAGE</a></li>
+					<li class="mdl-menu__item" id="signin"><a href="logout.do" style="color:#00acc1;text-decoration: none;font-weight:500; !important;">LOGOUT</a></li>
+					<li class="mdl-menu__item" aling=center><a href="mypage.do" style="color:#00acc1;text-decoration: none;font-weight:500; !important;">MYPAGE</a></li>
 					<!-- <li class="mdl-menu__item"><i class="material-icons">add</i>Add
 						another account...</li> -->
 				</ul>

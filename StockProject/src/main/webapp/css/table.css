@@ -6,9 +6,8 @@ Table design by Jens Wedin, www.jedisthlm.com
 table				{font: 88%/1.7em "Trebuchet MS", "Bitstream Vera Sans", Verdana, Helvetica, sans-serif;
 					border-collapse: separate; border-spacing: 0; margin: 0 0 1em 0; color:#000;}
 
-a 					{color: #09f; text-decoration: none; border-bottom: 1px solid;}
+a 					{color: #09f; text-decoration: none;}
 a:visited 			{color: #c3c; font-weight: normal;}
-a:hover 			{border-bottom-style: dotted;}
 
 thead th,
 thead td			{font-weight: bold; line-height:normal; text-align: left; border-bottom: 0.4em solid #78909C;}
@@ -29,7 +28,7 @@ tbody th a:visited 	{font-weight: bold;}
 tbody th + td		{white-space: nowrap;}
 
 tbody td,
-tbody th 			{border: 1px solid #fff; border-width: 1px 0;}
+tbody th 			{border: 1pxs solid #fff; border-width: 1px 0;}
 
 tbody tr.odd th,
 tbody tr.odd td 	{border-color: #deded8; background: #f9f9fb;}

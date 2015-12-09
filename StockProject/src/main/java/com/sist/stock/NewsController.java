@@ -23,7 +23,8 @@ public class NewsController {
 			}
 			list.add(item);
 		}*/
-		
+		String msg = "실시간 뉴스";
+		model.addAttribute("msg", msg);
 		model.addAttribute("list", list);
 		return "news/news";
 	}

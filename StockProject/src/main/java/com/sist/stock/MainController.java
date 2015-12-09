@@ -57,6 +57,8 @@ public class MainController {
 		   model.addAttribute("list", list);
 		  String image = dao.kospiImage();
 		  model.addAttribute("image", image);
+			String msg = "실시간 주식순위";
+			model.addAttribute("msg", msg);
 		   return "stockrank/stockrank";
 	}
    
