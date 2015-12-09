@@ -120,6 +120,34 @@ $(function(){
 		}
 		$('#re_re_update'+no).toggle();
 	});
+	$("#comment_click").click(function(){
+	      if(<c:out value="${not empty sessionScope.email}"/>)
+	      {
+	         //alert("로그인 됨");
+	         var msg="msg="+$('#msg').val();
+	         var bno="bno="+$('#bno').val();
+	         var no="no="+$('#no').val();
+	         var en="en="+1;
+	         var param=msg+"&"+bno+"&"+no+"&"+en;
+	         $.ajax({
+	                 type:"POST",
+	                 url:"inform_reply.do",
+	                 data: param,
+	                 success : function(result) {
+	                    $('.comment_view').html(result);
+	                    
+	                 },
+	                 error : function(xhr, status, error) {
+	                       alert("에러발생");
+	                 }
+	           });
+	      }
+	      else{
+	         alert("로그인하세요.");
+	          $('.modal' ).toggleClass('modal--show');
+	      }
+	      
+	   });
 });
 </script>
 </head>

@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.StringTokenizer;
 
 import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +11,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.inform.dao.Company_infoVO;
 import com.inform.dao.InformDAO;
 import com.inform.dao.InformVO;
 import com.inform.dao.ReplyDAO;
@@ -25,17 +23,28 @@ public class ReplyController {
 	private ReplyDAO dao;
 	@Autowired
 	InformDAO dao1;
+	
 	@RequestMapping("inform_main.do")
 	public String inform_main(String bno,Model model) throws IOException{
 		String msg="회사상세정보";
 		model.addAttribute("msg",msg);
-		if(bno==null)bno="1";
+		if(bno==null)bno="3";
 		model.addAttribute("bno",bno);
-		List<Company_infoVO> clist=dao.company_info_List();
-		String code="018260";
-		InformVO list=dao1.company_sinfo(code);
-		model.addAttribute("list",list);
-		model.addAttribute("clist",clist);
+		String code=dao1.code_serach(bno);
+		InformVO list1=dao1.company_sinfo(code);
+		model.addAttribute("list1",list1);
+		InformVO list3=dao1.company_info(code);
+		model.addAttribute("list3",list3);
+		InformVO list4=dao1.recent_date(code);
+		model.addAttribute("list4",list4);
+		InformVO list5=dao1.recent_info(code);
+		model.addAttribute("list5",list5);
+		InformVO list6=dao1.product(code);
+		model.addAttribute("list6",list6);
+		InformVO list7=dao1.product_rate(code);
+		model.addAttribute("list7",list7);
+		InformVO list8=dao1.sisae(code);
+		model.addAttribute("list8",list8);
 		return "inform/inform_main";
 	}
 	@RequestMapping("inform_reply.do")

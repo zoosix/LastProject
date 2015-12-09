@@ -74,6 +74,7 @@ public class InformVO {
 	private String d8_con7;
 	private String d8_con8;
 	private String d8_con9;
+	
 	public String getD1_name() {
 		return d1_name;
 	}

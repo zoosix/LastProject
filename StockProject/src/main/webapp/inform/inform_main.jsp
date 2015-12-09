@@ -32,13 +32,14 @@ $("#cbtn").click(function(){
 });
 </script>
 <style>
+
 .demo-card-wide.mdl-card {
   width: 512px;
 }
 .demo-card-wide > .mdl-card__title {
   color: #fff;
   height: 176px;
-  background: url('images/SDS.jpg') center / cover;
+ /*  background: url('image/logo/logo_'+'bno') center / cover; */
 }
 .demo-card-wide > .mdl-card__menu {
   color: #fff;
@@ -125,20 +126,18 @@ $("#cbtn").click(function(){
 </table>
 </center>
 <br><br>
-<center>
+ <center>
 	<div class="demo-card-wide mdl-card mdl-shadow--2dp">
-  <div class="mdl-card__title">
-    <h2 class="mdl-card__title-text">Welcome</h2>
+  <div class="mdl-card__title" id="con">
   </div>
   <div class="mdl-card__supporting-text">
-   <font style="font-size: 9pt">
-  ${list.d1_name}&nbsp;&nbsp;
-  ${list.d1_kosipi}&nbsp;&nbsp;
-  ${list.d1_WICS}<br>
-  ${list.d1_EPS}&nbsp;&nbsp;&nbsp;${list.d1_BPS}&nbsp;&nbsp;&nbsp;${list.d1_PER}&nbsp;&nbsp;&nbsp;<br>
-  ${list.d1_up_PER}&nbsp;&nbsp;&nbsp;${list.d1_PBR}&nbsp;&nbsp;&nbsp;${list.d1_income} 
-   </font>
-  
+    <font style="font-size: 9pt">
+  ${list1.d1_name}&nbsp;&nbsp;
+  ${list1.d1_kosipi}&nbsp;&nbsp;
+  ${list1.d1_WICS}<br>
+  ${list1.d1_BPS}&nbsp;&nbsp;&nbsp;${list1.d1_PER}&nbsp;&nbsp;&nbsp;<br>
+  ${list1.d1_up_PER}&nbsp;&nbsp;&nbsp;${list1.d1_PBR}&nbsp;&nbsp;&nbsp;${list1.d1_income}  
+   </font> 
   </div>
   <div class="mdl-card__actions mdl-card--border">
   <font style="font-size: 6px">
@@ -156,72 +155,148 @@ $("#cbtn").click(function(){
   </div>
 </div>
 </center>
+
 <center>
-<h3>회사소개</h3>	
+ <h3>회사소개</h3>
 	<table class="mdl-data-table mdl-js-data-table mdl-data-table" align="center" >
-	  <tbody>
+	   <tbody>
 	  		<tr>
 	  			<td colspan="1" width="30%" style="background-color: #dcdcdc; text-align: center;">본사주소</td>
-	  			<td colspan="3" width="70%" style="text-align: center;">삼성SDS</td>
+	  			<td colspan="3" width="70%" style="text-align: center;">${list3.d3_addr}</td>
 	  		</tr>
 	  		<tr>
 	  			<td width="20%" style="background-color: #dcdcdc; text-align: center;">홈페이지</td>
-	  			<td width="30%"></td>
+	  			<td width="30%">${list3.d3_homep}</td>
 	  			<td width="20%" style="background-color: #dcdcdc; text-align: center;">대표전화</td>
-	  			<td width="30%"></td>
+	  			<td width="30%">${list3.d3_call}</td>
 	  		</tr>
 	  		<tr>
 	  			<td width="20%" style="background-color: #dcdcdc; text-align: center;">설립일</td>
-	  			<td width="30%"></td>
+	  			<td width="30%">${list3.d3_create}</td>
 	  			<td width="20%" style="background-color: #dcdcdc; text-align: center;">대표이사</td>
-	  			<td width="30%"></td>
+	  			<td width="30%">${list3.d3_addr}</td>
 	  		</tr>
 	  		<tr>
 	  			<td width="20%" style="background-color: #dcdcdc; text-align: center;">계열</td>
-	  			<td width="30%"></td>
+	  			<td width="30%">${list3.d3_mainName}</td>
 	  			<td width="20%" style="background-color: #dcdcdc; text-align: center;">종업원수</td>
-	  			<td width="30%"></td>
+	  			<td width="30%">${list3.d3_worker}</td>
 	  		</tr>
 	  		<tr>
 	  			<td width="20%" style="background-color: #dcdcdc; text-align: center;">발행주식수(보통/우선)</td>
-	  			<td width="30%"></td>
+	  			<td width="30%">${list3.d3_stock}</td>
 	  			<td width="20%" style="background-color: #dcdcdc; text-align: center;">감사인</td>
-	  			<td width="30%"></td>
+	  			<td width="30%">${list3.d3_detect}</td>
 	  		</tr>
 	  		<tr>
 	  			<td width="20%" style="background-color: #dcdcdc; text-align: center;">명의개서</td>
-	  			<td width="30%"></td>
+	  			<td width="30%">${list3.d3_gaesi}</td>
 	  			<td width="20%" style="background-color: #dcdcdc; text-align: center;">주거래은행</td>
-	  			<td width="30%"></td>
+	  			<td width="30%">${list3.d3_bank}</td>
 	  		</tr>
-	  </tbody>
+	  </tbody> 
 	</table>
 <br><br>
+
 <h3>최근연혁</h3>	
-	<table class="mdl-data-table mdl-js-data-table mdl-data-table" align="center" >
+ 	<table class="mdl-data-table mdl-js-data-table mdl-data-table" align="center" >
 	  <tbody>
 	  		<tr>
-	  			<td width="20%" style="background-color: #dcdcdc; text-align: center;">날짜값</td>
-	  			<td width="80%"></td>
+	  			<td width="20%" style="background-color: #dcdcdc; text-align: center;">${list4.d4_con1}</td>
+	  			<td width="80%">${list5.d5_con1}</td>
 	  		</tr>
 	  		<tr>
-	  			<td width="20%" style="background-color: #dcdcdc; text-align: center;">날짜값</td>
-	  			<td width="80%"></td>
+	  			<td width="20%" style="background-color: #dcdcdc; text-align: center;">${list4.d4_con2}</td>
+	  			<td width="80%">${list5.d5_con2}</td>
 	  		</tr>
 	  		<tr>
-	  			<td width="20%" style="background-color: #dcdcdc; text-align: center;">날짜값</td>
-	  			<td width="80%"></td>
+	  			<td width="20%" style="background-color: #dcdcdc; text-align: center;">${list4.d4_con3}</td>
+	  			<td width="80%">${list5.d5_con3}</td>
 	  		</tr>
 	  		<tr>
-	  			<td width="20%" style="background-color: #dcdcdc; text-align: center;">날짜값</td>
-	  			<td width="80%"></td>
-	  		</tr>
-	  		<tr>
-	  			<td width="20%" style="background-color: #dcdcdc; text-align: center;">날짜값</td>
-	  			<td width="80%"></td>
+	  			<td width="20%" style="background-color: #dcdcdc; text-align: center;">${list4.d4_con4}</td>
+	  			<td width="80%">${list5.d5_con4}</td>
 	  		</tr>
 	  </tbody>
-	</table>
+	</table> 
+<br><br>	
+	<h3>시세및 주주 현황&nbsp;&nbsp;<font size="2pt" color="gray">[기준:2015.12.09]</font></h3>
+ 	<table class="mdl-data-table mdl-js-data-table mdl-data-table" align="center" >
+	  <tbody>
+	  		<tr>
+	  			<td width="20%" style="background-color: #dcdcdc; text-align: center;">주가/전일대비/수익률</td>
+	  			<td width="80%">${list8.d8_con1}</td>
+	  		</tr>
+	  		<tr>
+	  			<td width="20%" style="background-color: #dcdcdc; text-align: center;">52Weeks 최고/최저</td>
+	  			<td width="80%">${list8.d8_con2}</td>
+	  		</tr>
+	  		<tr>
+	  			<td width="20%" style="background-color: #dcdcdc; text-align: center;">액면가</td>
+	  			<td width="80%">${list8.d8_con3}</td>
+	  		</tr>
+	  		<tr>
+	  			<td width="20%" style="background-color: #dcdcdc; text-align: center;">거래량/거래대금</td>
+	  			<td width="80%">${list8.d8_con4}</td>
+	  		</tr>
+	  			<tr>
+	  			<td width="20%" style="background-color: #dcdcdc; text-align: center;">시가총액</td>
+	  			<td width="80%">${list8.d8_con5}</td>
+	  		</tr>
+	  		<tr>
+	  			<td width="20%" style="background-color: #dcdcdc; text-align: center;">52주베타</td>
+	  			<td width="80%">${list8.d8_con6}</td>
+	  		</tr>
+	  	 	<tr>
+	  			<td width="20%" style="background-color: #dcdcdc; text-align: center;">발행주식수/유통비율</td>
+	  			<td width="80%">${list8.d8_con8}</td>
+	  		</tr>
+	  		 <tr>
+	  			<td width="20%" style="background-color: #dcdcdc; text-align: center;">외국인지분율</td>
+	  			<td width="80%">${list8.d8_con8}</td>
+	  		</tr>
+	  		 <tr>
+	  			<td width="20%" style="background-color: #dcdcdc; text-align: center;">수익률<font color="gray">(1M/3M/6M/1Y)</font></td>
+	  			<td width="80%">${list8.d8_con9}</td> 
+	  		</tr> 
+	  </tbody>
+	</table> 
+	  <br><br>	
+	<h3>주요제품 매출구성&nbsp;&nbsp;<font size="2pt" color="gray">* 단위 : %</font></h3>
+ 	<table class="mdl-data-table mdl-js-data-table mdl-data-table" align="center" >
+	  <tbody>
+	
+	  		<tr>
+	  			<td width="20%" style="background-color: #dcdcdc; text-align: center;">${list4.d4_con1}</td>
+	  			<td width="80%">${list4.d4_con1}</td>
+	  		</tr>
+	  		<tr>
+	  			<td width="20%" style="background-color: #dcdcdc; text-align: center;">${list6.d6_con2}</td>
+	  			<td width="80%">${list7.d7_con2}</td>
+	  		</tr>
+	  		<tr>
+	  			<td width="20%" style="background-color: #dcdcdc; text-align: center;">${list6.d6_con3}</td>
+	  			<td width="80%">${list7.d7_con3}</td>
+	  		</tr>
+	  		<tr>
+	  			<td width="20%" style="background-color: #dcdcdc; text-align: center;">${list6.d6_con4}</td>
+	  			<td width="80%">${list7.d7_con4}</td>
+	  		</tr>
+	  		 <tr>
+	  			<td width="20%" style="background-color: #dcdcdc; text-align: center;">${list6.d6_con5}</td>
+	  			<td width="80%">${list7.d7_con5}</td>
+	  		</tr>
+	  		<tr>
+	  			<td width="20%" style="background-color: #dcdcdc; text-align: center;">${list6.d6_con6}</td>
+	  			<td width="80%">${list7.d7_con6}</td>
+	  		</tr>
+	  		<tr>
+	  			<td width="20%" style="background-color: #dcdcdc; text-align: center;">${list6.d6_con7}</td>
+	  			<td width="80%">${list7.d7_con7}</td>
+	  		</tr> 
+	  		</tbody>
+	  		</table> 
+	
 </center>
 <br><br><br>
 	<center>
@@ -229,5 +304,6 @@ $("#cbtn").click(function(){
 		<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" id="cbtn">댓글달기&보기</button>
 	</div>
    </center>
+   <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 </body>
 </html>

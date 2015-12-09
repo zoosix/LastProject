@@ -1,6 +1,6 @@
-癤?(document).bind('contextmenu', function(ex){
+/*癤?(document).bind('contextmenu', function(ex){
 	ex.preventDefault();
-});
+});*/
 $(document).ready(function(){
 	$('.search_input input').focusin(function(){
 		$(this).css({"background":"white"});
