@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:task="http://www.springframework.org/schema/task"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.1.xsd
+		http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-4.1.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.1.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.1.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.1.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.1.xsd">
+    <!-- <aop:aspectj-autoproxy/> -->
+    <context:annotation-config/>
+    <task:annotation-driven/>
+    <context:component-scan base-package="com.*"/>
+    <!--  <bean id="viewResolver"
+       class="org.springframework.web.servlet.view.InternalResourceViewResolver"
+       p:prefix="/WEB-INF/"
+       p:suffix=".jsp"
+    />
+    <bean id="aspect"
+       class="com.sist.aspect.TwitterAspect"
+    />
+    
+         1. DataSource 생성 
+         2. Transaction 연결
+         3. MyBatis연결
+         4. Mapper등록 
+    
+    <bean id="ds" class="org.apache.commons.dbcp.BasicDataSource"
+       p:driverClassName="oracle.jdbc.driver.OracleDriver"
+       p:url="jdbc:oracle:thin:@localhost:1521:ORCL"
+       p:username="scott"
+       p:password="tiger"
+     />
+     <bean id="transactionManager"
+       class="org.springframework.jdbc.datasource.DataSourceTransactionManager"
+       p:dataSource-ref="ds"
+     />
+     <bean id="ssf"
+       class="org.mybatis.spring.SqlSessionFactoryBean"
+       p:dataSource-ref="ds"
+     />
+     <bean id="mapper"
+       class="org.mybatis.spring.mapper.MapperFactoryBean"
+       p:sqlSessionFactory-ref="ssf"
+       p:mapperInterface="com.board.dao.BoardMapper"
+     />
+     <tx:annotation-driven proxy-target-class="true"/> -->
+    <!-- <bean id="viewResolver"
+       class="org.springframework.web.servlet.view.UrlBasedViewResolver"
+       p:requestContextAttribute="requestContext"
+       p:viewClass="org.springframework.web.servlet.view.tiles2.TilesView"
+    /> -->
+    <!-- <bean id="tilesConfigurer" 
+      class="org.springframework.web.servlet.view.tiles2.TilesConfigurer"
+      p:definitions="/WEB-INF/tiles.xml"
+    />
+    <bean id="tilesViewResolver"
+      class="org.springbyexample.web.servlet.view.tiles2.TilesUrlBasedViewResolver"
+      p:viewClass="org.springbyexample.web.servlet.view.tiles2.DynamicTilesView"
+      p:prefix="/WEB-INF/"
+      p:suffix=".jsp"
+      p:tilesDefinitionName="main"
+      p:tilesBodyAttributeName="body"
+      p:tilesDefinitionDelimiter="."
+      p:order="1"
+    /> -->
+    <bean id="tilesConfigurer" 
+      class="org.springframework.web.servlet.view.tiles2.TilesConfigurer"
+      p:definitions="/WEB-INF/tiles.xml"
+    />
+    <bean id="tilesViewResolver"
+      class="org.springframework.web.servlet.view.UrlBasedViewResolver"
+      p:requestContextAttribute="requestContext"
+	  p:viewClass="org.springframework.web.servlet.view.tiles2.TilesView"
+      p:order="1"
+    />
+    <bean id="viewResolver"
+       class="org.springframework.web.servlet.view.InternalResourceViewResolver"
+       p:prefix="/"
+       p:suffix=".jsp"
+       p:order="2"
+    /> 
+    <bean id="ds"
+      class="org.apache.commons.dbcp.BasicDataSource"
+      p:driverClassName="oracle.jdbc.driver.OracleDriver"
+      p:url="jdbc:oracle:thin:@localhost:1521:ORCL"
+      p:username="scott"
+      p:password="tiger"
+   />
+   <!-- SqlSessionFactory -->
+   <bean id="sqlSessionFactory"
+      class="org.mybatis.spring.SqlSessionFactoryBean"
+      p:dataSource-ref="ds"
+   />
+   <!-- Mapper -->
+   <bean id="stock_mapper"
+      class="org.mybatis.spring.mapper.MapperFactoryBean"
+      p:sqlSessionFactory-ref="sqlSessionFactory"
+      p:mapperInterface="com.stock.dao.StockMapper"
+   />
+   <bean id="inform_mapper"
+      class="org.mybatis.spring.mapper.MapperFactoryBean"
+      p:sqlSessionFactory-ref="sqlSessionFactory"
+      p:mapperInterface="com.inform.dao.ReplyMapper"
+   />
+       <bean id="memberMapper"
+       class="org.mybatis.spring.mapper.MapperFactoryBean"
+       p:sqlSessionFactory-ref="sqlSessionFactory"
+       p:mapperInterface="com.sist.member.MemberMapper"
+     />
+   
+      <bean id="transactionManager"
+       class="org.springframework.jdbc.datasource.DataSourceTransactionManager"
+       p:dataSource-ref="ds"
+     />
+</beans>
