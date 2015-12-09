@@ -27,7 +27,7 @@
   #floating {
      position: fixed;
      right: 50%;
-     top: 100px;
+     top: 50px;
      margin-right: -640px;
      text-align:center;
      width: 120px;
@@ -38,7 +38,7 @@
       margin : 0 auto;
       overflow : hidden;
       padding : 5px;
-      width: 1000px;
+      width: 1100px;
   } 
   </style>
  
@@ -66,7 +66,6 @@ $("#rfbutton").click(function(){
 <body>
 
    <div class="container">
-   <div class="panel-body">
    <div>
       <c:forEach var="vo" items="${list }">
          <div class="twitterdiv" style="border: 2px solid; color: #5CD1E5; width: 25%; height:170px; float: left;">
@@ -80,11 +79,10 @@ $("#rfbutton").click(function(){
          </div>
       </c:forEach>
       </div>
-   </div>
    <div id="floating">
    <br>
    <div><button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" id="rfbutton" onClick="window.location.reload()">새로고침</button></div><br>
-   <div><button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" onclick="$('.container').stop().animate({scrollTop:'-=840'})">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;위로 </button></div><br>
+   <div><button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" onclick="$('.container').stop().animate({scrollTop:'-=840'})">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;위로</button></div><br>
    <div><button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" onclick="$('.container').stop().animate({scrollTop:'+=840'})">&nbsp;아래로</button></div>
    </div>
    </div>

@@ -32,8 +32,8 @@
   #floating {
 	  position: fixed;
 	  right: 50%;
-	  top: 100px;
-	  margin-right: -640px;
+	  top: 55px;
+	  margin-right: -600px;
 	  text-align:center;
 	  width: 120px;
   }
@@ -43,36 +43,41 @@
       margin : 0 auto;
       overflow : hidden;
       padding : 5px;
-      width: 1000px;
+      width: 1200px;
   }
   </style>
 </head>
 <body>
 	<center>
-		 <table id="table_content" style="float:left; margin-left: 22px;">
-		 	<tr>
-		 		<td><a id="cursor" href=news.do?find=삼성SDS style="text-decoration: none">삼성</a></td>
+	<div>
+		 <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp" style="float:left; margin-left: 22px; margin-top:10px; position:fixed;">
+			<tr>
+		 		<td><a id="cursor" href=news.do?find=삼성SDS style="text-decoration: none">삼성SDS</a></td>
 		 		<td><a id="cursor" href=news.do?find=LG전자 style="text-decoration: none">LG전자</a></td>
-		 		<td><a id="cursor" href=news.do?find=SKT style="text-decoration: none">SKT</a></td>
+		 		<td><a id="cursor" href=news.do?find=SKT style="text-decoration: none">SK Telecom</a></td>
+		 		<td><a id="cursor" href=news.do?find=KT style="text-decoration: none">KT</a></td>
+		 		<td><a id="cursor" href=news.do?find=엔씨소프트 style="text-decoration: none">엔씨소프트</a></td>
 		 		<td><a id="cursor" href=news.do?find=네이버 style="text-decoration: none">네이버</a></td>
-		 		<td><a id="cursor" href=news.do?find=한빛소프트 style="text-decoration: none">한빛소프트</a></td>
-		 		<td><a id="cursor" href=news.do?find=게임빌 style="text-decoration: none">게임빌</a></td>
-		 		<td><a id="cursor" href=news.do?find=네오위즈 style="text-decoration: none">네오위즈</a></td>
-		 		<td><a id="cursor" href=news.do?find=아마존 style="text-decoration: none">Amazon</a></td>
-		 		<td><a id="cursor" href=news.do?find=AT&T style="text-decoration: none">AT&T</a></td>
-		 		<td><a id="cursor" href=news.do?find=애플 style="text-decoration: none">Apple</a></td>
-		 		<td><a id="cursor" href=news.do?find=MicroSoft style="text-decoration: none">MS</a></td>
+		 		<td><a id="cursor" href=news.do?find=신세계I&S style="text-decoration: none">신세계IandS</a></td>
+		 		<td><a id="cursor" href=news.do?find=LG유플러스 style="text-decoration: none">LG유플러스</a></td>
+		 		<td><a id="cursor" href=news.do?find=효성ITX style="text-decoration: none">효성 ITX</a></td>
+		 		</tr>
+		    <tr style="float:center;">
+		 		<td><a id="cursor" href=news.do?find=아마존 style="text-decoration: none">아마존</a></td>
+		 		<td><a id="cursor" href=news.do?find=애플 style="text-decoration: none">애플</a></td>
+		 		<td><a id="cursor" href=news.do?find=마이크로소프트 style="text-decoration: none">마이크로소프트</a></td>
 		 		<td><a id="cursor" href=news.do?find=인텔 style="text-decoration: none">인텔</a></td>
-		 		<td><a id="cursor" href=news.do?find=어도비 style="text-decoration: none">어도비</a></td>
 		 		<td><a id="cursor" href=news.do?find=NVIDIA style="text-decoration: none">NVIDIA</a></td>
 		 		<td><a id="cursor" href=news.do?find=FaceBook style="text-decoration: none">페이스북</a></td>
 		 		<td><a id="cursor" href=news.do?find=NetFilx style="text-decoration: none">NetFlix</a></td>
 		 		<td><a id="cursor" href=news.do?find=구글 style="text-decoration: none">구글</a></td>
+		 		<td><a id="cursor" href=news.do?find=페이팔 style="text-decoration: none">페이팔</a></td>
 		 	</tr>
 		 </table>
+		 </div>
 	</center>
 	<div class="container">
-	<div>
+	<div style="margin-top:100px;">
 		<c:forEach var="item" items="${list }">
 
 			<div class="twitterdiv" style="border: 1px solid; color: #5CD1E5; width: 25%; height:210px; float: left;">
@@ -97,3 +102,32 @@
 	</div>
 </body>
 </html>
+
+<!-- # 국내
+   SKT : SK Telecom Co. Ltd. (017670.KS) 
+   KT : KT Corp. (030200.KS)
+   엔씨 소프트 : NCsoft Corporation (036570.KS)
+   네이버 : Naver Corporation (035420.KS)
+   LG전자 : LG Electronics Inc. (066570.KS)
+   삼성sds : Samsung SDS Co., Ltd. (018260.KS)
+   신세계 I&S : SHINSEGAE Information & Communication Co., LTD (035510.KS)
+   LG유플러스 :  LG Uplus Corp. (032640.KS)
+   효성 ITX : Hyosung ITX Co. Ltd. (094280.KS)
+   나이스 : NICE Holdings Co., Ltd. (034310.KS)
+   KTcs : KTCS Corporation (058850.KS)
+   삼성에스원 : S-1 Corporation (012750.KS)
+         
+
+# 해외
+   아마존 : Amazon.com, Inc. (AMZN) 
+   AT&T : AT&T, Inc. (T)
+   애플 : Apple Inc. (AAPL)
+   마이크로소프트 : Microsoft Corporation (MSFT)
+   인텔 : Intel Corporation (INTC)
+   어도비 : Adobe Systems Incorporated (ADBE)
+   NVIDIA : NVIDIA Corporation (NVDA) 
+   FaceBook : Facebook, Inc. (FB)
+   Netflix : Netflix, Inc. (NFLX)
+   구글 : Alphabet Inc. (GOOG)
+   paypal : PayPal Holdings, Inc. (PYPL)
+   퀄컴 : QUALCOMM Incorporated (QCOM) -->
