@@ -58,7 +58,7 @@ function drawChart() {
 			<th align=center>ROE</th>
 		</tr>
 		</thead>
-		<tbody>
+		<tbody class="stockrank">
 		<c:forEach var="vo" items="${list }">
 			<tr>
 				<td align=center>${vo.no }</td>

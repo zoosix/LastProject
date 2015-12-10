@@ -13,15 +13,16 @@
       google.load("visualization", "1", {packages:["corechart"]});
       google.setOnLoadCallback(drawChart);
       function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-          ['회사명', '주가'],
-          <c:forEach var="vo" items="${elist}">
-          [
-           '<c:out value="${vo.name}"/>',   
-           <c:out value="${vo.lastPrice}"/>
-          ],
-        </c:forEach>
-        ]);
+    	  var data = google.visualization.arrayToDataTable([
+    	                                                    ['회사명', '주가',{ role: 'style' }],
+    	                                                    <c:forEach var="vo" items="${elist}">
+    	                                                    [
+    	                                                     '<c:out value="${vo.name}"/>',   
+    	                                                     <c:out value="${vo.lastPrice}"/>,
+    	                                                     'color: #00ACC1'
+    	                                                    ],
+    	                                                  </c:forEach>
+    	                                                  ]);
 
         var options = {
           title: '종목별 시가',/* 
@@ -40,7 +41,7 @@
 <%@taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles" %>
 </head>
 <div style="width: 96%; height: 900px; margin: 2%; position: relative; overflow: hidden;">
-<span style="text-align: left">${ex.date } - ${ex.ex }</span>
+<div align=right><span style="text-align: left">${ex.date }(오늘) - ${ex.ex }(원/달러)</span></div>
 	<div id="wrap" style="width: 100%; height: 100%; position: absolute; overflow: hidden;">
 		<div class="col-00" style="height: 100%; overflow: hidden;">
 			<div id="left" style="width: 100%; height: 100%; float: left; position: absolute;">
@@ -50,7 +51,7 @@
 							<div id="stock_chart" style="text-align: center; margin-top: -50px;margin-left: 50px">
 								<div style="font-weight: 900; font-size: 40px;">종목을 선택하세요!</div>
 								<br>
-								<img src="image/finger.png" width="200px" height="250px">
+								<!-- <img src="image/finger.png" width="200px" height="250px"> -->
 							</div>
 						</div>
 					</div>
@@ -92,7 +93,7 @@
 											<input class="dayHigh" type="hidden" name="dayHigh" value="${vo.dayHigh }">
 											<input class="change" type="hidden" name="change" value="${vo.change }">
 										</div>
-										<div class="col-00" style="height: 20px; text-align: center; font-weight: bold; color: ${vo.tcolor.equals('+')?'red':'blue'};">${vo.tcolor.equals("+")?"▲":"▼"}&nbsp;${vo.lastPrice }&nbsp;&nbsp;&nbsp;&nbsp;${vo.change }</div>
+										<div class="col-00" style="height: 20px; text-align: center; font-weight: bold; color: ${vo.tcolor.equals('+')?'#f42866':'#00ACC1'};">${vo.tcolor.equals("+")?"▲":"▼"}&nbsp;${vo.lastPrice }&nbsp;&nbsp;&nbsp;&nbsp;${vo.change }</div>
 									</div>
 								</div>
 							</c:forEach>
@@ -144,7 +145,7 @@
 								</div>
 							</div>
 							<div style="width: 45%; height: 90%;padding: 5px 0px 5px; float: left;">
-									<div id="com2_detail" style="width: 100%; height: 80%; padding:0px 40px 5px; font-weight: bold; font-size: 15px;">
+									<div id="com2_detail" style="width: 100%; height: 80%; padding:0px 10px 5px; font-weight: bold; font-size: 15px;">
 									<input type="hidden" id="com2" class="com2" name="com2">
 										<table class="mdl-data-table mdl-js-data-table"  style="width:400px;"><!-- class="table table-striped" -->
 										  <thead>
@@ -186,16 +187,18 @@
 					</div>
 					<div id="comp_btn_wrap" style="width: 10%; height: 85%; float: left;">
 						<div style="width: 90%; height: 50%; padding: 5px;">
-							<div id="back_btn" style="width: 100%; height: 100%; padding-top: 20px; text-align: center; font-weight: bold;  cursor: pointer;">
-								 <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" style="font-size: 40px; height:180px; ">
-   							△<br>
+							<div id="back_btn" style="width: 100%; height: 100%; padding-top: 100px; text-align: center; font-weight: bold;  cursor: pointer;">
+								 <button class="mdl-button mdl-js-button mdl-button--icon" style="width:80px;height:80px;color:#00acc1">
+                             <i class="material-icons" style="top:20px;left:10px;line-height:54px;width:54px;font-size:84px;!important;">expand_less</i>
+                             
+                           </button>
 							</div>
 						</div>
 						<div style="width: 90%; height: 50%; padding: 5px;">
-							<div id="compare_btn" style="width: 100%; height: 100%; padding-top: 25px; text-align: center; font-weight: bold;  cursor: pointer">
+							<div id="compare_btn" style="width: 100%; height: 100%; padding-top: 80px; text-align: center; font-weight: bold;  cursor: pointer">
 								<!-- Accent-colored raised button with ripple -->
-                             <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" style="font-size: 40px; height:180px; ">
-   							<font style="font-size: 10px;">Compare</font><br></button>	
+                             <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" style="font-size: 40px; height:80px; ">
+   							<font style="font-size: 12px;">Compare</font><br></button>	
 							</div>
 						</div>
 					</div>

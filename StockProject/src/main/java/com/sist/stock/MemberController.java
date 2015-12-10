@@ -37,6 +37,7 @@ public class MemberController {
 		return "member/join";
 	}
 	@RequestMapping("join_ok.do")
+	@ResponseBody
 	public String memberInsert(String email, String pwd, String name, String gender, String birth, String tell,
 			String[] favorite, Model model) {
 
@@ -67,15 +68,15 @@ public class MemberController {
 		data = data.substring(0, data.length() - 1);
 		System.out.println(data);
 		vo.setFavorite(data);
-		System.out.println("favorite: "+favorite);
-		System.out.println("favorite: "+vo.getFavorite());
+		//System.out.println("favorite: "+favorite);
+		//System.out.println("favorite: "+vo.getFavorite());
 
 		dao.joinOk(vo);
 
-		model.addAttribute("email", email);
-		System.out.println("email은 " + email);
-		
-		return "main/body";
+		//model.addAttribute("email", email);
+		//System.out.println("email은 " + email);
+		String res = "<script>" + "location.href=\"/stock/main.do\";" + "</script>";
+		return res;
 	}
 
 	@RequestMapping("login_ok.do")
@@ -91,7 +92,7 @@ public class MemberController {
 		} else {
 			MemberVO vo = dao.memberGetInfo(email);
 			if (pwd.equals(vo.getPwd())) {
-				res = "<script>" + "location.href=\"/finalbigdata/main.do\";" + "</script>";
+				res = "<script>" + "location.href=\"/stock/main.do\";" + "</script>";
 				session.setAttribute("email", email);
 				session.setAttribute("name", vo.getName());
 				session.setAttribute("favorite", vo.getFavorite());

@@ -8,7 +8,7 @@ import com.twit.main.MyTwitterStream;
 public class TwitterAspect {
    @Autowired
    private MyTwitterStream ms;
-   @Before("execution(* com.sist.finalbigdata.TwitController.init(..))")
+   @Before("execution(* com.sist.stock.TwitController.init(..))")
    public void start()
    {
 	   ms.twitterStart();

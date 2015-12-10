@@ -1,5 +1,5 @@
 function joinOk(){
-	alert("눌렀다");
+	//alert("눌렀다");
 	var email=$('#email').val();
 	//alert(email);
 	var pwd=$('#password').val();
@@ -14,7 +14,7 @@ function joinOk(){
 	*/
 	//alert(gender);
 	var birth=$('#birth').val($('#birthY').val()+'/'+$('#birthM').val()+'/'+$('#birthD').val());
-	alert(birth);
+	//alert(birth);
 	var tell=$('#phone').val();
 	//alert(tell);
 	
@@ -23,7 +23,7 @@ function joinOk(){
 		 items.push($(this).val());
 		});
 	 var favorite = items.join(',');
-	     alert(favorite);
+	     //alert(favorite);
 	
 	$('#join_Form').submit();
 	
