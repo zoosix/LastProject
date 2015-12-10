@@ -143,6 +143,9 @@
 				<a class="mdl-navigation__link" href="news.do"><i
 				class="mdl-color-text--blue-grey-400 material-icons"
 				role="presentation">trending_up</i>실시간뉴스</a>
+				<!-- <a class="mdl-navigation__link" href="newsrank.do"><i
+				class="mdl-color-text--blue-grey-400 material-icons"
+				role="presentation">trending_up</i>실시간news랭크</a> -->
 			<c:if test="${sessionScope.email!=null }"> <!-- 로그인해야 보일것 -->
 				
 				</c:if>
