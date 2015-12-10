@@ -35,7 +35,7 @@ public class MainController {
 	   model.addAttribute("ex",vo);
 	   try {
        	RSSReader reader = RSSReader.getInstance();
-		reader.setURL(new URL("http://newssearch.naver.com/search.naver?where=rss&query=�궪�꽦�쟾�옄"));		int r=(int)(Math.random()*255);
+		reader.setURL(new URL("http://newssearch.naver.com/search.naver?where=rss&query=삼성전자"));		int r=(int)(Math.random()*255);
 			int g=(int)(Math.random()*255);
 			int b=(int)(Math.random()*255);
 			model.addAttribute("r", r);
@@ -57,6 +57,8 @@ public class MainController {
 		   model.addAttribute("list", list);
 		  String image = dao.kospiImage();
 		  model.addAttribute("image", image);
+			String msg = "실시간 주식순위";
+			model.addAttribute("msg", msg);
 		   return "stockrank/stockrank";
 	}
    

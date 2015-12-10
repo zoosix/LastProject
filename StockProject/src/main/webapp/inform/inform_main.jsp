@@ -29,18 +29,43 @@ $("#cbtn").click(function(){
            }
      });
 });
+var bno=${bno};
+
+
 });
 </script>
+ <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+		
+        var data = google.visualization.arrayToDataTable([
+          ['${list6.d6_con1}', 'Hours per Day'],
+          ['${list6.d6_con1}',67],
+          ['${list6.d6_con2}',32],
+          
+        ]);
+
+        var options = {
+          title: '주요제품메뉴구성'
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        chart.draw(data, options);
+      }
+    </script>
 <style>
 
 .demo-card-wide.mdl-card {
   width: 512px;
 }
-.demo-card-wide > .mdl-card__title {
+/* .demo-card-wide > .mdl-card__title {
   color: #fff;
   height: 176px;
- /*  background: url('image/logo/logo_'+'bno') center / cover; */
-}
+  background: url('image/logo/logo_1') center / cover; 
+} */
 .demo-card-wide > .mdl-card__menu {
   color: #fff;
 }
@@ -128,7 +153,8 @@ $("#cbtn").click(function(){
 <br><br>
  <center>
 	<div class="demo-card-wide mdl-card mdl-shadow--2dp">
-  <div class="mdl-card__title" id="con">
+  <div class="mdl-card__title" ">
+  	<img src="image/logo/logo_${bno}.jpg" style="max-width: 100%; max-height: 100%">
   </div>
   <div class="mdl-card__supporting-text">
     <font style="font-size: 9pt">
@@ -267,8 +293,8 @@ $("#cbtn").click(function(){
 	  <tbody>
 	
 	  		<tr>
-	  			<td width="20%" style="background-color: #dcdcdc; text-align: center;">${list4.d4_con1}</td>
-	  			<td width="80%">${list4.d4_con1}</td>
+	  			<td width="20%" style="background-color: #dcdcdc; text-align: center;">${list6.d6_con1}</td>
+	  			<td width="80%">${list7.d7_con1}</td>
 	  		</tr>
 	  		<tr>
 	  			<td width="20%" style="background-color: #dcdcdc; text-align: center;">${list6.d6_con2}</td>
@@ -298,6 +324,8 @@ $("#cbtn").click(function(){
 	  		</table> 
 	
 </center>
+<br><br><br>
+<div id="piechart" style="width:1100px; height: 500px;"></div>
 <br><br><br>
 	<center>
      <div class="comment_view" id="comment_view">

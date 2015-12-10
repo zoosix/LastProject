@@ -119,8 +119,8 @@
 				<ul
 					class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
 					for="accbtn">
-					<li class="mdl-menu__item" id="signin"><a href="logout.do">LOGOUT</a></li>
-					<li class="mdl-menu__item" aling=center><a href="mypage.do">MYPAGE</a></li>
+					<li class="mdl-menu__item" id="signin"><a href="logout.do" style="color:#00acc1;text-decoration: none;font-weight:500; !important;">LOGOUT</a></li>
+					<li class="mdl-menu__item" aling=center><a href="mypage.do" style="color:#00acc1;text-decoration: none;font-weight:500; !important;">MYPAGE</a></li>
 					<!-- <li class="mdl-menu__item"><i class="material-icons">add</i>Add
 						another account...</li> -->
 				</ul>
@@ -142,7 +142,7 @@
 				role="presentation">trending_up</i>소셜분석</a>
 				<a class="mdl-navigation__link" href="news.do"><i
 				class="mdl-color-text--blue-grey-400 material-icons"
-				role="presentation">trending_up</i>실시간뉴스</a>
+				role="presentation">library_books</i>실시간뉴스</a>
 			<c:if test="${sessionScope.email!=null }"> <!-- 로그인해야 보일것 -->
 				
 				</c:if>

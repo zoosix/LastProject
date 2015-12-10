@@ -91,7 +91,7 @@ public class MemberController {
 		} else {
 			MemberVO vo = dao.memberGetInfo(email);
 			if (pwd.equals(vo.getPwd())) {
-				res = "<script>" + "location.href=\"/finalbigdata/main.do\";" + "</script>";
+				res = "<script>" + "location.href=\"/stock/main.do\";" + "</script>";
 				session.setAttribute("email", email);
 				session.setAttribute("name", vo.getName());
 				session.setAttribute("favorite", vo.getFavorite());
@@ -108,7 +108,7 @@ public class MemberController {
 	@ResponseBody
 	public String logout(HttpSession session) {
 		session.invalidate();
-		String res = "<script>" + "location.href=\"/finalbigdata/main.do\";" + "</script>";
+		String res = "<script>" + "location.href=\"/stock/main.do\";" + "</script>";
 		return res;
 	}
 	@RequestMapping("mypage.do")

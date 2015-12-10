@@ -30,7 +30,7 @@ public class TwitController {
 		   int curpage=Integer.parseInt(page);
 		   List<TwitterVO> list=twitdao.dataAll(curpage);
 		   int totalpage=twitdao.dataTotalPage();
-		   String msg="Home";
+		   String msg="소셜분석";
 		   model.addAttribute("list", list);
 		   model.addAttribute("curpage", curpage);
 		   model.addAttribute("totalpage", totalpage);

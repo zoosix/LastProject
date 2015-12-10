@@ -24,7 +24,7 @@
 											<input class="dayHigh" type="hidden" name="dayHigh" value="${vo.dayHigh }">
 											<input class="change" type="hidden" name="change" value="${vo.change }">
 										</div>
-										<div class="col-00" style="height: 20px; text-align: center; font-weight: bold; color: ${vo.tcolor.equals('+')?'red':'blue'};">${vo.tcolor.equals("+")?"▲":"▼"}&nbsp;${vo.lastPrice }&nbsp;&nbsp;&nbsp;&nbsp;${vo.change }</div>
+										<div class="col-00" style="height: 20px; text-align: center; font-weight: bold; color: ${vo.tcolor.equals('+')?'#f42866':'#00ACC1'};">${vo.tcolor.equals("+")?"▲":"▼"}&nbsp;${vo.lastPrice }&nbsp;&nbsp;&nbsp;&nbsp;${vo.change }</div>
 									</div>
 								</div>
 							</c:forEach>
