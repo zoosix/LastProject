@@ -41,7 +41,7 @@
 <%@taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles" %>
 </head>
 <div style="width: 96%; height: 900px; margin: 2%; position: relative; overflow: hidden;">
-<span style="text-align: left">${ex.date } - ${ex.ex }</span>
+<div align=right><span style="text-align: left">${ex.date }(오늘) - ${ex.ex }(원/달러)</span></div>
 	<div id="wrap" style="width: 100%; height: 100%; position: absolute; overflow: hidden;">
 		<div class="col-00" style="height: 100%; overflow: hidden;">
 			<div id="left" style="width: 100%; height: 100%; float: left; position: absolute;">
@@ -51,7 +51,7 @@
 							<div id="stock_chart" style="text-align: center; margin-top: -50px;margin-left: 50px">
 								<div style="font-weight: 900; font-size: 40px;">종목을 선택하세요!</div>
 								<br>
-								<img src="image/finger.png" width="200px" height="250px">
+								<!-- <img src="image/finger.png" width="200px" height="250px"> -->
 							</div>
 						</div>
 					</div>
