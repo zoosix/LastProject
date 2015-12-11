@@ -36,6 +36,7 @@ public class MemberController {
 		model.addAttribute("msg", msg);
 		return "member/join";
 	}
+	@ResponseBody
 	@RequestMapping("join_ok.do")
 	public String memberInsert(String email, String pwd, String name, String gender, String birth, String tell,
 			String[] favorite, Model model) {
@@ -67,15 +68,15 @@ public class MemberController {
 		data = data.substring(0, data.length() - 1);
 		System.out.println(data);
 		vo.setFavorite(data);
-		System.out.println("favorite: "+favorite);
-		System.out.println("favorite: "+vo.getFavorite());
+		//System.out.println("favorite: "+favorite);
+		//System.out.println("favorite: "+vo.getFavorite());
 
 		dao.joinOk(vo);
 
-		model.addAttribute("email", email);
-		System.out.println("email은 " + email);
-		
-		return "main/body";
+		//model.addAttribute("email", email);
+		//System.out.println("email은 " + email);
+		String res = "<script>" + "location.href=\"/stock/main.do\";" + "</script>";
+		return res;
 	}
 
 	@RequestMapping("login_ok.do")

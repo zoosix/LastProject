@@ -4,6 +4,7 @@ import java.util.*;
 import org.rosuda.REngine.Rserve.RConnection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 import com.sist.news.Item;
 import com.sist.news.NewsManager;
@@ -21,7 +22,7 @@ public class NewsDAO {
     {
     	try
     	{
-    		String path="C:/Users/sist/git/FinalProject/FinalProject/src/main/webapp/news/news.txt";
+    		String path="C:\\Users\\Zoosix\\git\\LastProject\\StockProject\\src\\main\\webapp\\news\\news.txt";
     		File file=new File(path);
     		FileWriter fw=new FileWriter(file);
     		List<Item> list=manager.getNewsData(data);
@@ -40,7 +41,7 @@ public class NewsDAO {
 			}
 			fw.write(strData);
     		fw.close();
-    		System.out.println("세이브완료");
+    		System.out.println("���� �Ϸ�");
     	}catch(Exception ex)
     	{
     		System.out.println(ex.getMessage());
@@ -51,24 +52,24 @@ public class NewsDAO {
     	try
     	{
     		RConnection rc=new RConnection();
-    		rc.setStringEncoding("utf8");
-    		rc.voidEval("Sys.setenv(JAVA_HOME=\"C:/Program Files/Java/jre1.8.0_51\")");
+    		rc.voidEval("Sys.setenv(JAVA_HOME=\"C:/Program Files/Java/jre1.8.0_45\")");
     		rc.voidEval("library(KoNLP)");
     		rc.voidEval("library(RColorBrewer)");
     		rc.voidEval("library(wordcloud)");
-    		rc.voidEval("f<-file(\"C:/Users/sist/git/FinalProject/FinalProject/src/main/webapp/news/news.txt\")");
+    		rc.voidEval("f<-file(\"C:/Users/Zoosix/git/LastProject/StockProject/src/main/webapp/news/news.txt\")");
     		rc.voidEval("textLine<-readLines(f)");
     		rc.voidEval("nouns<-sapply(textLine,extractNoun,USE.NAMES=F)");
     		rc.voidEval("close(f)");
     		rc.voidEval("wordcloud<-table(unlist(nouns))");
-    		rc.voidEval("png(\"C:/Users/sist/git/FinalProject/FinalProject/src/main/webapp/news/news.png\")");
+    		//rc.voidEval("png(\"C:/Users/sist/git/LastProject/StockProject/src/main/webapp/news/news.png\")");
+    		rc.voidEval("png(\"C:/springDev/FINAL/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/StockProject/news\")");
     		rc.voidEval("wordcloud(names(wordcloud),freq=wordcloud,min.freq=2,rot.per=.2,random.order=F,scale=c(8,0,3),colors=rainbow(15),max.words=150)");
     		rc.voidEval("dev.off()");
     		rc.close();
-    		/*File file=new File("C:\\springDev\\springStudy\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp1\\wtpwebapps\\FinalProject\\news\\news.png");
+    		File file=new File("C:\\springDev\\FINAL\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\wtpwebapps\\StockProject\\news\\news.png");
     		FileInputStream fis=new FileInputStream(file);
-    		FileOutputStream fos=new FileOutputStream("C:\\Users\\sist\\git\\FinalProject\\FinalProject\\src\\main\\webapp\\news\\news.png");
-    		//C:\Users\sist\git\FinalProject\FinalProject\src\main\webapp\news
+    		FileOutputStream fos=new FileOutputStream("C:\\Users\\Zoosix\\git\\LastProject\\StockProject\\src\\main\\webapp\\news\\news.png");
+    		
     		byte[] b=new byte[1024];
     		int i=0;
     		while((i=fis.read(b, 0, 1024))!=-1)
@@ -76,7 +77,7 @@ public class NewsDAO {
     			fos.write(b, 0, i);
     		}
     		fis.close();
-    		fos.close();*/
+    		fos.close();
     	}catch(Exception ex)
     	{
     		System.out.println(ex.getMessage());

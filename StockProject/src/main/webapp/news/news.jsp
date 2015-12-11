@@ -99,6 +99,9 @@
 	<div><button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" onclick="$('.container').stop().animate({scrollTop:'-=840'})">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;위로</button></div><br>
 	<div><button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" onclick="$('.container').stop().animate({scrollTop:'+=840'})">&nbsp;아래로</button></div>
 	</div>
+	<div style="text-align: center">
+	<img src="<%=request.getContextPath()%>/news/news.png" width=800 height=800>
+	</div>
 	</div>
 </body>
 </html>

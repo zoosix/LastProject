@@ -40,7 +40,7 @@
 							</tbody>
 							</table>
 							<div class="panel-footer plan">
-								<button class="btn btn-lg" style="font-size: 12px;">${f.name }</button>
+								<a href="inform_main.do?bno=6"><button class="btn btn-lg" style="font-size: 12px;">${f.name }</button></a>
 							</div>
 					</div>
 				</div>
