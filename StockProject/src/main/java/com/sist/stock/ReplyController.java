@@ -49,13 +49,10 @@ public class ReplyController {
 	}
 	@RequestMapping("inform_reply.do")
 	public String inform_reply(Model model,String bno,String no,String page,String en,HttpSession session,String msg,String del,String re,String up) throws IOException{
-		
 		if(bno==null) bno="1";
 		if(page==null) page="1";
 		String email=(String)session.getAttribute("email");
 		String name=(String)session.getAttribute("name");
-		
-		
 		if(en!=null){
 			replyWrite(email, name, bno, msg);
 		}
@@ -100,7 +97,7 @@ public class ReplyController {
 	//댓글 추가
 	public void replyWrite(String email,String name,String bno,String msg){
 		ReplyVO vo=new ReplyVO();
-		vo.setId(email);
+		vo.setEmail(email);
 		vo.setName(name);
 		vo.setBno(Integer.parseInt(bno));
 		vo.setMsg(msg);
@@ -112,7 +109,7 @@ public class ReplyController {
 		ReplyVO info=dao.replyParentInfo(no);
 		dao.replyStepIncrement(info);
 		ReplyVO d=new ReplyVO();
-		d.setId(email);
+		d.setEmail(email);
 		d.setBno(Integer.parseInt(bno));
 		d.setName(name);
 		d.setMsg(msg);
@@ -122,5 +119,4 @@ public class ReplyController {
 		dao.replyReplyWrite(d);
 		dao.replyDepthIncrement(no);
 	}
-
 }

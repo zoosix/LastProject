@@ -255,7 +255,7 @@ public class MainController {
 					vo.setDayHigh(st.nextToken());
 					vo.setChange(st.nextToken());
 					vo.setTcolor(vo.getChange().substring(0,1));
-					vo.setLastTradeSize(Integer.parseInt(st.nextToken()));
+					//vo.setLastTradeSize(Integer.parseInt(st.nextToken()));
 					sb.append(line+"\n");
 					
 					list.add(vo);

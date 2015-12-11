@@ -4,16 +4,15 @@ import java.util.*;
 import org.rosuda.REngine.Rserve.RConnection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Repository;
 
 import com.sist.news.Item;
 import com.sist.news.NewsManager;
 
 import java.io.*;
 //C:\springDev\springStudy\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\wtpwebapps\BigDataMiniProject\news
-/*
- *    
- */
+
+     
+ 
 @Component
 public class NewsDAO {
 	@Autowired
@@ -41,7 +40,7 @@ public class NewsDAO {
 			}
 			fw.write(strData);
     		fw.close();
-    		System.out.println("���� �Ϸ�");
+    		System.out.println("txt저장완료");
     	}catch(Exception ex)
     	{
     		System.out.println(ex.getMessage());
@@ -52,12 +51,13 @@ public class NewsDAO {
     	try
     	{
     		RConnection rc=new RConnection();
-    		rc.voidEval("Sys.setenv(JAVA_HOME=\"C:/Program Files/Java/jre1.8.0_45\")");
+    		rc.voidEval("Sys.setenv(JAVA_HOME=\"C:/Program Files/Java/jre1.8.0_60\")");
+    		rc.setStringEncoding("utf8");
     		rc.voidEval("library(KoNLP)");
     		rc.voidEval("library(RColorBrewer)");
     		rc.voidEval("library(wordcloud)");
     		rc.voidEval("f<-file(\"C:/Users/Zoosix/git/LastProject/StockProject/src/main/webapp/news/news.txt\")");
-    		rc.voidEval("textLine<-readLines(f)");
+    		rc.voidEval("textLine<-	readLines(f)");
     		rc.voidEval("nouns<-sapply(textLine,extractNoun,USE.NAMES=F)");
     		rc.voidEval("close(f)");
     		rc.voidEval("wordcloud<-table(unlist(nouns))");
@@ -84,6 +84,3 @@ public class NewsDAO {
     	}
     }
 }
-
-
-

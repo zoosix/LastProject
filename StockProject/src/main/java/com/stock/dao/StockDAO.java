@@ -19,11 +19,11 @@ public class StockDAO {
 	@Autowired
 	   private StockMapper mapper; 
 	   
-	public int boardTotalpage()
+	/*public int boardTotalpage()
 	   {
 	      int count=mapper.boardRowCount();
 	      return count;
-	   }
+	   }*/
 	   public void stockInsert(List<YahooStockVO> list)
 	   {
 	      for(YahooStockVO vo:list)

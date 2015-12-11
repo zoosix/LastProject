@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles" %>
+<%@ taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="kor">
@@ -33,14 +33,10 @@
 	margin-right: 40px;
 	margin-bottom: 40px;
 }
-
-
-
-	
-  
 }
 </style>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 <script src="js/jquery-1.11.2.js"></script>
 <!-- <script src="js/bootstrap/bootstrap.js"></script> -->
 <script src="js/highcharts/highstock.js"></script>
@@ -85,122 +81,119 @@
 			</ul>
 		</div>
 		</header>
-				<div class="demo-drawer mdl-layout__drawer mdl-color--blue-grey-900 mdl-color-text--blue-grey-50">
+		<div
+			class="demo-drawer mdl-layout__drawer mdl-color--blue-grey-900 mdl-color-text--blue-grey-50">
 			<header class="demo-drawer-header"> <img
-				src="images/user.jpg" class="demo-avatar">
-
-			<c:if test="${sessionScope.email==null }">
-						<div class="demo-avatar-dropdown">
-				<span>로그인 후 이용해주세요.</span>
-				<div class="mdl-layout-spacer"></div>
-				<button id="accbtn"
-					class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-					<i class="material-icons" role="presentation">arrow_drop_down</i> <span
-						class="visuallyhidden">Accounts</span>
-				</button>
-				<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
-					for="accbtn">
-					<li class="mdl-menu__item" id="signin"><a class="modalA" style="color:#00acc1;text-decoration: none;font-weight:500; !important;">SIGN IN</a></li>
-					<li class="mdl-menu__item" aling=center><a class="modalA" style="color:#00acc1;text-decoration: none;font-weight:500; !important;" href="join.do">SIGN UP</a></li>
-				</ul>
-			</div>
-				</c:if>
-				
-				
-			<c:if test="${sessionScope.email!=null }">
-			<div class="demo-avatar-dropdown">
-				<span>${sessionScope.email}</span>
-				<div class="mdl-layout-spacer"></div>
-				<button id="accbtn"
-					class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-					<i class="material-icons" role="presentation">arrow_drop_down</i> <span
-						class="visuallyhidden">Accounts</span>
-				</button>
-				<ul
-					class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
-					for="accbtn">
-					<li class="mdl-menu__item" id="signin"><a href="logout.do" style="color:#00acc1;text-decoration: none;font-weight:500; !important;">LOGOUT</a></li>
-					<li class="mdl-menu__item" aling=center><a href="mypage.do" style="color:#00acc1;text-decoration: none;font-weight:500; !important;">MYPAGE</a></li>
-					<!-- <li class="mdl-menu__item"><i class="material-icons">add</i>Add
-						another account...</li> -->
-				</ul>
+				src="images/user.jpg" class="demo-avatar"> <c:if
+				test="${sessionScope.email==null }">
+				<div class="demo-avatar-dropdown">
+					<span>로그인 후 이용해주세요.</span>
+					<div class="mdl-layout-spacer"></div>
+					<button id="accbtn"
+						class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+						<i class="material-icons" role="presentation">arrow_drop_down</i>
+						<span class="visuallyhidden">Accounts</span>
+					</button>
+					<ul
+						class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
+						for="accbtn">
+						<li class="mdl-menu__item" id="signin"><a class="modalA"
+							style="color: #00acc1; text-decoration: none; font-weight: 500; !important;">SIGN
+								IN</a></li>
+						<li class="mdl-menu__item" aling=center><a class="modalA"
+							style="color: #00acc1; text-decoration: none; font-weight: 500; !important;"
+							href="join.do">SIGN UP</a></li>
+					</ul>
 				</div>
-				</c:if>
-			
-			
-			
-			</header>
+			</c:if> <c:if test="${sessionScope.email!=null }">
+				<div class="demo-avatar-dropdown">
+					<span>${sessionScope.email}</span>
+					<div class="mdl-layout-spacer"></div>
+					<button id="accbtn"
+						class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+						<i class="material-icons" role="presentation">arrow_drop_down</i>
+						<span class="visuallyhidden">Accounts</span>
+					</button>
+					<ul
+						class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
+						for="accbtn">
+						<li class="mdl-menu__item" id="signin"><a href="logout.do"
+							style="color: #00acc1; text-decoration: none; font-weight: 500; !important;">LOGOUT</a></li>
+						<li class="mdl-menu__item" aling=center><a href="mypage.do"
+							style="color: #00acc1; text-decoration: none; font-weight: 500; !important;">MYPAGE</a></li>
+						<!-- <li class="mdl-menu__item"><i class="material-icons">add</i>Add
+						another account...</li> -->
+					</ul>
+				</div>
+			</c:if> </header>
 			<nav class="demo-navigation mdl-navigation mdl-color--blue-grey-800">
 			<a class="mdl-navigation__link" href="main.do"><i
 				class="mdl-color-text--blue-grey-400 material-icons"
-				role="presentation">home</i>Home</a> 
-				<a class="mdl-navigation__link"
-				href="inform_main.do"><i class="mdl-color-text--blue-grey-400 material-icons"
-				role="presentation">work</i>회사상세정보</a> 
-				<a class="mdl-navigation__link" href="social.do"><i
+				role="presentation">home</i>Home</a> <a class="mdl-navigation__link"
+				href="inform_main.do"><i
 				class="mdl-color-text--blue-grey-400 material-icons"
-				role="presentation">trending_up</i>소셜분석</a>
-				<a class="mdl-navigation__link" href="news.do"><i
+				role="presentation">work</i>회사상세정보</a> <a class="mdl-navigation__link"
+				href="social.do"><i
 				class="mdl-color-text--blue-grey-400 material-icons"
-				role="presentation">library_books</i>실시간뉴스</a>
-				<!-- <a class="mdl-navigation__link" href="newsrank.do"><i
+				role="presentation">trending_up</i>소셜분석</a> <a
+				class="mdl-navigation__link" href="news.do"><i
 				class="mdl-color-text--blue-grey-400 material-icons"
-				role="presentation">trending_up</i>실시간news랭크</a> -->
-			<c:if test="${sessionScope.email!=null }"> <!-- 로그인해야 보일것 -->
-				
-				</c:if>
-				<a class="mdl-navigation__link"
-				href="stockrank.do"><i class="mdl-color-text--blue-grey-400 material-icons"
-				role="presentation">home</i>실시간 주식 순위</a> 
+				role="presentation">library_books</i>실시간뉴스</a> <!-- <a class="mdl-navigation__link" href="newsrank.do"><i
+				class="mdl-color-text--blue-grey-400 material-icons"
+				role="presentation">trending_up</i>실시간news랭크</a> --> <c:if
+				test="${sessionScope.email!=null }">
+				<!-- 로그인해야 보일것 -->
+
+			</c:if> <a class="mdl-navigation__link" href="stockrank.do"><i
+				class="mdl-color-text--blue-grey-400 material-icons"
+				role="presentation">home</i>실시간 주식 순위</a>
 			<div class="mdl-layout-spacer"></div>
-			
+
 			<a class="mdl-navigation__link" href=""><i
 				class="mdl-color-text--blue-grey-400 material-icons"
 				role="presentation">help_outline</i><span class="visuallyhidden">Help</span></a>
 			</nav>
 		</div>
-		<main class="mdl-layout__content mdl-color--white-100">
-				    <tiles:insertAttribute name="body"/> 
-				    
-				    
-		 <!-- ---------------------------------------------------------- -->
-				     <div class="modal">
-						  <div class="overlay"></div>
-						  <div class="modal__contents modal--transition">
-				
-								<div class='login'>
-								  <button class='close' id='close'></button>
-								  <div class='top'>
-								    <h2 style="color: #00acc1;font-size: 20px; padding: 30px 0px 20px 25px">Login</h2>
-								  </div>
-								   <form name="loginFrm" method="post" action="login_ok.do">
-								  <div class='user'>
-								    <input id='email' name='email' placeholder='Mail' type='text'>
-								  </div>
-								  <div class='pw'>
-								    <input id='pwd' name='pwd' placeholder='Password' type='password'>
-								  </div>
-								  <div class='remlog'>
-								    <div class="remember">
-								      <input checked="checked" id="remember" name="remember" type="checkbox">
-								      <label for="remember"></label>Remember me
-								    </div>
-								    <!-- Accent-colored raised button with ripple -->								    
-								    <input type='Button' value='Sign in' onclick="login()" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-								  </div>
-								  <div class='forgot'>
-								    <h3>
-								      Forgot your password?
-								    </h3>
-								    <a href='#' style="color: #46485c;  text-decoration: none;">click here</a>
-								    to order a new password.
-								  </div>
-								  	</form>
-								</div>
-						  </div>
+		<main class="mdl-layout__content mdl-color--white-100"> <tiles:insertAttribute
+			name="body" /> <!-- ---------------------------------------------------------- -->
+		<div class="modal">
+			<div class="overlay"></div>
+			<div class="modal__contents modal--transition">
+
+				<div class='login'>
+					<button class='close' id='close'></button>
+					<div class='top'>
+						<h2
+							style="color: #00acc1; font-size: 20px; padding: 30px 0px 20px 25px">Login</h2>
+					</div>
+					<form name="loginFrm" method="post" action="login_ok.do">
+						<div class='user'>
+							<input id='email' name='email' placeholder='Mail' type='text'>
 						</div>
-          <script src="js/modal.js"></script>
-         <link rel="stylesheet" href="css/modalcss.css">
+						<div class='pw'>
+							<input id='pwd' name='pwd' placeholder='Password' type='password'>
+						</div>
+						<div class='remlog'>
+							<div class="remember">
+								<input checked="checked" id="remember" name="remember"
+									type="checkbox"> <label for="remember"></label>Remember
+								me
+							</div>
+							<!-- Accent-colored raised button with ripple -->
+							<input type='Button' value='Sign in' onclick="login()"
+								class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+						</div>
+						<div class='forgot'>
+							<h3>Forgot your password?</h3>
+							<a href='#' style="color: #46485c; text-decoration: none;">click
+								here</a> to order a new password.
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<script src="js/modal.js"></script>
+		<link rel="stylesheet" href="css/modalcss.css">
 
 		</main>
 	</div>

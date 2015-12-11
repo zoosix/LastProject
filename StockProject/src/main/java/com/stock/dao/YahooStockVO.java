@@ -37,17 +37,17 @@ public class YahooStockVO {
 	private String inputTime;
 	private String rate;
 
-	private int lastTradeSize;
+	//private int lastTradeSize;
 	
 	//종목명 현재가  전일대비  등락률=(현재가-어제가)/어제가*100
 	//name/lasPrice/previousClose   (lasPrice-previousClose)/previousClose*100
 	
-	public int getLastTradeSize() {
+	/*public int getLastTradeSize() {
 		return lastTradeSize;
 	}
 	public void setLastTradeSize(int lastTradeSize) {
 		this.lastTradeSize = lastTradeSize;
-	}
+	}*/
 	public int getNo() {
 		return no;
 	}

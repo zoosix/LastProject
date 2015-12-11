@@ -28,10 +28,7 @@ $("#cbtn").click(function(){
                  alert("에러발생");
            }
      });
-});
-var bno=${bno};
-
-
+	});
 });
 </script>
  <script type="text/javascript" src="https://www.google.com/jsapi"></script>
@@ -329,7 +326,7 @@ var bno=${bno};
 <br><br><br>
 	<center>
      <div class="comment_view" id="comment_view">
-		<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" id="cbtn">댓글달기&보기</button>
+		<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" id="cbtn">한줄코멘트 달기&보기</button>
 	</div>
    </center>
    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>

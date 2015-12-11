@@ -1,7 +1,5 @@
 package com.sist.stock;
 
-import org.rosuda.REngine.REXP;
-import org.rosuda.REngine.Rserve.RConnection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,51 +8,51 @@ import java.util.*;
 import com.sist.news.*;
 @Controller
 public class NewsController {
-	@Autowired
-	private NewsManager manager;
-	@Autowired
-	private NewsDAO dao;
-	@RequestMapping("news.do")
-	public String news_list(String find,Model model) throws InterruptedException {
-		if(find==null)
-			find="»ï¼º";
-		List<Item> list=manager.getNewsData(find);
-		/*String[] temp={"[","...","&quot;","&lt;","&gt;","'","'","\""};
-		for(Item item:list) {
-			for(String s:temp) {
-				item.getDescription().replace(s, "");
-			}
-			list.add(item);
-		}*/
-		dao.newsSave(find);
-		dao.createImage();
-		String msg = "½Ç½Ã°£ ´º½º";
-		model.addAttribute("msg", msg);
-		model.addAttribute("list", list);
-		return "news/news";
-	}
-	@RequestMapping("newsrank.do")
-	public String news_rank(Model model)throws Exception{
-		System.out.println("newsrank.do");
-		manager.newsSelect();
-		System.out.println("selec¿Ï·á");
-		List<Word> fList = new ArrayList<Word>();
-		RConnection rc = new RConnection();
-		rc.setStringEncoding("utf8");
-		rc.voidEval("feel<-read.table(\"c:/data2/feel.txt\",header=T,sep=\",\")");
-		REXP p = rc.eval("feel$word");
-		String[] word = p.asStrings();
-		p = rc.eval("feel$count");
-		int[] count = p.asIntegers();
-		rc.close();
-		for (int i = 0; i < word.length; i++) {
-			Word w = new Word();
-			w.setWord(word[i]);
-			w.setCount(count[i]);
-			fList.add(w);
-		}
-		model.addAttribute("fList", fList);
-
-		return "news/newsrank";
-	}
+   @Autowired
+   private NewsManager manager;
+   @Autowired
+   private NewsDAO dao;
+   @RequestMapping("news.do")
+   public String news_list(String find,Model model) throws InterruptedException {
+      if(find==null)
+         find="ì‚¼ì„±";
+      List<Item> list=manager.getNewsData(find);
+      /*String[] temp={"[","...","&quot;","&lt;","&gt;","'","'","\""};
+      for(Item item:list) {
+         for(String s:temp) {
+            item.getDescription().replace(s, "");
+         }
+         list.add(item);
+      }*/
+      dao.newsSave(find);
+      dao.createImage();
+      String msg = "ì‹¤ì‹œê°„ ë‰´ìŠ¤";
+      model.addAttribute("msg", msg);
+      model.addAttribute("list", list);
+      return "news/news";
+   }
+//   @RequestMapping("newsrank.do")
+//   public String news_rank(Model model)throws Exception{
+//      System.out.println("newsrank.do");
+//      manager.newsSelect();
+//      System.out.println("selecì™„ë£Œ");
+//      List<Word> fList = new ArrayList<Word>();
+//      RConnection rc = new RConnection();
+//      rc.setStringEncoding("utf8");
+//      rc.voidEval("feel<-read.table(\"c:/data2/feel.txt\",header=T,sep=\",\")");
+//      REXP p = rc.eval("feel$word");
+//      String[] word = p.asStrings();
+//      p = rc.eval("feel$count");
+//      int[] count = p.asIntegers();
+//      rc.close();
+//      for (int i = 0; i < word.length; i++) {
+//         Word w = new Word();
+//         w.setWord(word[i]);
+//         w.setCount(count[i]);
+//         fList.add(w);
+//      }
+//      model.addAttribute("fList", fList);
+//
+//      return "news/newsrank";
+//   }
 }
